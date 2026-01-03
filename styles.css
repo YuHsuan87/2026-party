@@ -10,14 +10,6 @@ h1, h2, h3, h4, p, span, label {
     color: var(--text-color) !important;
 }
 
-/* 右上角 Checkbox 優化 */
-div[data-testid="stCheckbox"] {
-    position: fixed; top: 20px; right: 20px; z-index: 1000;
-    background: var(--card-bg); padding: 8px 16px; border-radius: 50px;
-    border: 1px solid var(--accent-color);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-}
-
 /* 幻燈片優化 */
 .slideshow-container {
     width: 100%; height: clamp(250px, 50vh, 400px);
