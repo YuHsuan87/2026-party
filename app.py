@@ -63,13 +63,34 @@ st.header("📍 嘉義包棟時光")
 
 st.markdown('<div class="slideshow-container"><div class="slide"></div><div class="slide"></div><div class="slide"></div></div>', unsafe_allow_html=True)
 
+st.balloons()
+
 st.write("### ⏳ 距離出發還有")
 utils.render_countdown_ui(TARGET_DATE)
 
 st.write("### 🌦️ 即時天氣預報")
 utils.weather_widget()
 
-st.divider()
+st.write("### 📅 驚喜行程揭曉")
+
+st.markdown("""
+<div class="timeline-container">
+    <div class="event-card">
+        <div class="event-day">DAY 01</div>
+        <div class="event-title">嘉義 Arrival 🥂</div>
+        <div class="event-detail"><b>15:00</b> | 民宿集合（小艾山青）☕</div>
+        <div class="event-detail"><b>18:00</b> | 神秘晚餐行程 🍱</div>
+        <div class="event-detail"><b>20:00</b> | 酒精與歡笑的交換禮物 🍷</div>
+    </div> <div class="event-card">
+        <div class="event-day">DAY 02</div>
+        <div class="event-title">悠閒時光 🥞</div>
+        <div class="event-detail"><b>09:00</b> | 民宿手工早餐 🥞</div>
+        <div class="event-detail"><b>11:00</b> | 大合照時間 📸</div>
+        <div class="event-detail"><b>12:00</b> | 市區巡禮 & 解散</div>
+    </div> </div>
+""", unsafe_allow_html=True)
+
+# st.divider()
 
 st.subheader("🗺️ 集合地點：小艾山青 I’s Home")
 st.map(pd.DataFrame([EVENT_LOCATION]), zoom=14)
