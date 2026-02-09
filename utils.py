@@ -2,6 +2,10 @@ import requests
 import streamlit as st
 from streamlit_lottie import st_lottie
 from datetime import datetime
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def get_countdown_data(target_date_str):
     """計算倒數時間邏輯"""
@@ -35,7 +39,8 @@ def render_countdown_ui(target_date_str):
 
 def get_chiayi_weather():
     # 嘉義中埔鄉的經緯度 (或是直接搜 'Chiayi')
-    api_key = "ba9bec91fd67776e4884065120251ec4" 
+
+    api_key = os.getenv("WEATHER_API_KEY")
     url = f"http://api.openweathermap.org/data/2.5/weather?q=Chiayi&appid={api_key}&units=metric&lang=zh_tw"
     
     try:
