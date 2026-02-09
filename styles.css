@@ -100,3 +100,80 @@ h1, h2, h3, h4, p, span, label {
     opacity: 0.8;
     line-height: 1.8;
 }
+
+/* 成員頭像容器 */
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* 自動調整列數 */
+    gap: 20px;
+    padding: 30px 0;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 單個成員卡片 */
+.member-card {
+    background: rgba(255, 255, 255, 0.08); /* 半透明背景 */
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    text-align: center;
+    padding: 15px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.member-card:hover {
+    transform: translateY(-8px) scale(1.03); /* 懸停時上浮並放大 */
+    border-color: #FF4B4B; /* 邊框變色 */
+    box-shadow: 0 8px 25px rgba(255, 75, 75, 0.2); /* 增加陰影 */
+}
+
+/* 成員頭像 */
+.member-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* 變成圓形 */
+    object-fit: cover; /* 圖片填滿圓形 */
+    border: 3px solid #FF4B4B; /* 紅色邊框 */
+    margin-bottom: 10px;
+    transition: all 0.3s ease;
+}
+
+.member-card:hover .member-avatar {
+    transform: scale(1.05) rotate(5deg); /* 懸停時稍微旋轉放大 */
+}
+
+/* 成員名稱 */
+.member-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 5px;
+}
+
+/* 成員簡介 (懸停時顯示) */
+.member-bio {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+    height: 0; /* 預設隱藏 */
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.member-card:hover .member-bio {
+    height: auto; /* 懸停時顯示 */
+    opacity: 1;
+    margin-top: 5px;
+}
+
+/* 確保圖片路徑正確 */
+img.stImage {
+    max-width: 100%;
+    height: auto;
+    display: block; /* 移除預設的行內元素空白 */
+}
